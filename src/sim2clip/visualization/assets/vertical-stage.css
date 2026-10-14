@@ -1,0 +1,52 @@
+/* Fixed capture surface; controls and full analysis live outside this root. */
+.layout-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0;color:var(--muted);font-size:12px}
+.layout-tools label{color:var(--ink)}
+.layout-tools select{margin-left:8px}
+.vertical-preview{display:none;width:540px;max-width:100%;margin:0 auto 28px;position:relative;overflow:hidden;background:var(--paper)}
+body.vertical-layout .vertical-preview{display:block}
+body.vertical-layout #panels,body.vertical-layout main>.legend,body.vertical-layout main>header{display:none}
+/* Content ends before y=1730. Platform safe space: top 72, right 144, bottom 190. */
+.vertical-stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:top left;background:#f5f6ef;color:#173b36;padding:72px 144px 190px 60px;overflow:hidden;font-family:"Segoe UI","Microsoft YaHei",sans-serif;font-size:36px;line-height:1.3;box-sizing:border-box}
+.vertical-stage *{box-sizing:border-box}
+.stage-brand{display:flex;justify-content:space-between;align-items:center;height:50px;font-weight:800;font-size:46px;letter-spacing:-1px}
+.stage-brand span{font-size:30px;font-weight:500;letter-spacing:0;color:#677972}
+.stage-type{margin:12px 0 8px;color:#117763;font-size:34px;font-weight:600;line-height:44px}
+.stage-question{display:block;height:136px;font-size:60px;line-height:1.25;font-weight:750;letter-spacing:-1px;margin:0;overflow-wrap:anywhere;white-space:pre-line}
+.stage-conditions{font-size:32px;color:#677972;line-height:40px;height:40px;margin:10px 0 18px}
+.stage-groups{display:grid;gap:20px}
+.stage-card{background:#fff;border:2px solid #dfe5dd;border-radius:24px;overflow:hidden;height:550px;display:flex;flex-direction:column}
+.stage-card-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px 0;height:62px;flex:none}
+.stage-card-title{display:flex;align-items:center;gap:14px;min-width:0;font-size:42px;font-weight:700}
+.stage-badge{width:46px;height:46px;display:grid;place-items:center;border-radius:10px;font-size:32px;background:#fbedd8;color:#855a1c;flex:none}
+.stage-card:nth-child(2) .stage-badge{background:#e7f2ec;color:#117763}
+.stage-status{font-size:28px;white-space:nowrap;color:#117763}
+.stage-config{padding:2px 22px 0;color:#677972;font-size:30px;line-height:32px;height:40px;overflow-wrap:anywhere;flex:none}
+.stage-canvas{display:block;width:100%;height:356px;flex:1;min-height:0}
+.stage-stats{height:88px;display:grid;grid-template-columns:repeat(3,1fr);align-items:center;padding:8px 22px 12px;border-top:2px solid #edf0e8;background:#fcfdf9;flex:none}
+.stage-stat{display:flex;align-items:baseline;gap:12px}
+.stage-stat small{font-size:32px;white-space:nowrap}
+.stage-stat strong{font-size:56px;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-1px}
+.stage-stat.waiting{color:#936019}
+.stage-stat.processing{color:#306f98}
+.stage-stat.completed{color:#117763}
+.stage-footer{position:absolute;top:1520px;left:60px;right:144px;margin:0}
+.stage-clock-row{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.stage-clock-row small{display:block;font-size:28px;line-height:34px;color:#677972;margin-bottom:2px}
+.stage-clock{font-size:54px;font-weight:750;line-height:1.1;font-variant-numeric:tabular-nums}
+.stage-percent{font-size:42px;font-weight:700;text-align:right}
+.stage-progress{height:10px;background:#dfe6dc;border-radius:6px;overflow:hidden;margin-top:10px}
+.stage-progress-fill{height:100%;background:#117763;width:0}
+.stage-legend{display:flex;gap:24px;align-items:center;margin-top:10px;font-size:28px;line-height:34px;color:#677972}
+.stage-legend i{display:inline-block;width:16px;height:16px;border-radius:50%;margin-right:8px}
+.stage-reserve{margin-top:8px;border-top:2px solid #dfe5dd;padding-top:8px;font-size:26px;line-height:30px;color:#677972}
+.stage-single .stage-card{height:1120px}
+.stage-single .stage-badge{width:auto;padding:0 10px}
+.stage-single .stage-canvas{height:926px}
+@media(max-width:620px){
+  body.vertical-layout main{padding:0}
+  body.vertical-layout nav,body.vertical-layout .layout-tools,body.vertical-layout .controls{margin-left:12px;margin-right:12px}
+  body.vertical-layout .layout-tools>span{display:none}
+  body.vertical-layout main>.model-note,body.vertical-layout .summary,body.vertical-layout .server-summary,body.vertical-layout .timeline-section,body.vertical-layout .report,body.vertical-layout footer{margin-left:16px;margin-right:16px}
+  .vertical-preview{width:100%;margin-bottom:20px}
+  .layout-tools{flex-wrap:wrap}
+}

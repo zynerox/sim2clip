@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sim2clip"
+version = "1.0.0"
+description = "An AI agent that turns natural language questions into reproducible, independently validated simulation experiments."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "anyio>=4.8,<5",
+    "langchain-core>=1.0,<2",
+    "langchain-openai>=1,<2",
+    "langgraph>=1.0,<2",
+    "langgraph-checkpoint-sqlite>=3,<4",
+    "mcp==2.3.0",
+    "pydantic>=2.10,<3",
+    "pillow>=11.1,<13",
+    "python-dotenv>=1.1,<2",
+    "simpy==4.1.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/zynerox/sim2clip"
+Repository = "https://github.com/zynerox/sim2clip"
+Documentation = "https://github.com/zynerox/sim2clip#documentation-and-license"
+Issues = "https://github.com/zynerox/sim2clip/issues"
+
+[project.scripts]
+sim2clip = "sim2clip.cli:entrypoint"
+sim2clip-mcp = "sim2clip.mcp_server.simulation_server:main"
+
+[dependency-groups]
+dev = ["pytest>=8.3,<10", "ruff>=0.11,<1", "mypy>=1.15,<2", "playwright>=1.50,<2"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sim2clip"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src/sim2clip"]
+
+[[tool.mypy.overrides]]
+module = ["simpy.*"]
+ignore_missing_imports = true

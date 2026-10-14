@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sim2Clip · 便利店午高峰</title><style>/*__STYLE__*/</style></head>
+<body>
+<main>
+  <nav><a class="brand" href="#">Sim2Clip<span>实验，让答案看得见。</span></a>
+    <div class="nav-actions"><label class="file-button">加载结果 JSON<input id="load-file" type="file" accept=".json,application/json"></label><button id="download">下载数据 ↗</button></div></nav>
+  <header>
+    <div><p class="eyebrow" id="scenario-label">OFFICIAL DEMO / CONVENIENCE STORE RUSH</p>
+      <h1 id="headline">同样 100 位顾客。<br>多开两个收银台，会发生什么？</h1>
+      <p id="goal" class="intro">同一批顾客，同一模拟时钟。看队列如何变长，又如何被消化。</p></div>
+    <aside class="evidence"><span class="green-dot"></span>事件回放 · 真实 SimPy 计算<br><small id="provenance"></small></aside>
+  </header>
+  <div id="error" role="alert" hidden></div>
+  <div class="layout-tools"><label>画面布局 <select id="layout"><option value="desktop">桌面分析</option><option value="vertical">9:16 竖屏舞台</option></select></label><span>舞台外控制 · 画面按手机比例预览</span></div>
+  <section class="controls" aria-label="回放控制">
+    <div class="control-top"><div class="clock"><small>共享模拟时钟</small><strong id="clock">00:00.0</strong></div>
+      <div class="selectors"><label>配对种子 <select id="seed"></select></label><label id="candidate-label">方案 B <select id="candidate"></select></label></div>
+      <div class="playback"><button id="restart" aria-label="从头回放">↺</button><button id="play" class="primary">播放实验 ▶</button><label>速度 <select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="0.5">0.5×</option></select></label></div></div>
+    <input id="scrubber" type="range" min="0" max="1000" value="0" step="1" aria-label="模拟时间进度">
+    <div class="scale"><span>0 秒 · 开店</span><span id="end-time"></span></div>
+  </section>
+  <section id="panels" class="panels" aria-label="同步实验对比"></section>
+  <div class="legend"><span><i class="not-arrived"></i>尚未到达</span><span><i class="waiting"></i>排队</span><span><i class="serving"></i>结账</span><span><i class="completed"></i>已完成</span><span class="legend-note">每个角色代表 1 人；超额明确聚合。路径为示意，状态按事件更新。</span></div>
+  <section class="summary"><div><p class="eyebrow">EXPERIMENT RESULTS</p><h2>一次回放，看过程；多次实验，看结果。</h2><p id="summary-note"></p></div>
+    <div id="summary-table"></div></section>
+  <section class="timeline-section"><div class="section-heading"><div><p class="eyebrow">AGENT EXECUTION</p><h2>Agent 如何得到这个答案？</h2></div><span class="tag">Planner → MCP → Validation → Report</span></div>
+    <p class="muted">以下时间为节点完成时的 checkpoint 保存时间，与上方模拟秒数独立。</p><ol id="timeline"></ol></section>
+  <details class="report"><summary>查看实验报告</summary><pre id="report"></pre></details>
+  <footer><strong>Sim2Clip</strong><span>有限人群的模型实验 · 所有数值可追溯到原始结果 · 不代表真实店铺测量</span></footer>
+</main>
+<script type="application/json" id="experiment-data">__PAYLOAD__</script>
+<script>/*__SCRIPT__*/</script>
+</body></html>

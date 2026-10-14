@@ -1,0 +1,3 @@
+# Keep release checksums valid regardless of checkout line-ending settings.
+/release/* -text
+/docs/release-notes-v1.0.0.md -text

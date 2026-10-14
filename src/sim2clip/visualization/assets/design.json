@@ -1,0 +1,30 @@
+{
+  "version": "2d-1",
+  "width": 720,
+  "height": 440,
+  "queue_columns": 8,
+  "queue_rows": 3,
+  "queue_left": 148,
+  "queue_top": 165,
+  "queue_gap_x": 39,
+  "queue_gap_y": 66,
+  "visible_cashiers": 6,
+  "visible_departures": 3,
+  "person_separation": 28,
+  "person_height": 48,
+  "entrance": [78, 337],
+  "queue_gate": [148, 337],
+  "service_aisle_x": 466,
+  "exit": [694, 366],
+  "motion_seconds": 24,
+  "playback_seconds": 36,
+  "colors": {
+    "ink": "#173b36",
+    "paper": "#f5f6ef",
+    "muted": "#677972",
+    "not_arrived": "#dce3da",
+    "waiting": "#e99b34",
+    "serving": "#478bb4",
+    "completed": "#117763"
+  }
+}

@@ -1,0 +1,71 @@
+.presentation-preview{display:none;margin:0 auto 28px;width:100%;position:relative;overflow:hidden;background:var(--paper)}
+body.presentation-mode .presentation-preview{display:block}
+.presentation-stage{position:relative;padding:40px 48px 28px;background:#f5f6ef;color:#173b36;min-height:820px;box-sizing:border-box;font-size:22px;line-height:1.4}
+.p-brand{display:flex;align-items:center;justify-content:space-between;font-size:34px;font-weight:800;letter-spacing:-1px}
+.p-brand span{font-size:20px;font-weight:500;letter-spacing:0;color:#677972}
+.p-source{color:#117763;font-size:18px;margin:14px 0 10px}
+.p-question{font-size:38px;line-height:1.25;margin:0;min-height:100px;overflow-wrap:anywhere}
+.p-conditions{font-size:20px;color:#677972;margin:10px 0 22px}
+.p-body{min-height:440px}
+.p-info{padding:28px 36px;border-top:3px solid #117763;background:white;border-radius:18px;min-height:440px}
+.p-kicker{font-size:16px;color:#117763;margin:0 0 22px}
+.p-info h3{font-size:32px;line-height:1.3;margin:0 0 26px}
+.p-line{font-size:24px;line-height:1.55;margin:16px 0;overflow-wrap:anywhere}
+.p-tool-name{font-size:28px;font-weight:700;color:#117763;overflow-wrap:anywhere;margin:24px 0 12px}
+.p-footer{margin-top:24px}
+.p-caption{font-size:24px;font-weight:650;margin-bottom:18px}
+.p-track{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;font-size:18px;color:#677972}
+.p-track span{padding:8px 0;border-top:3px solid #dfe5dd}
+.p-track .active{color:#117763;border-color:#117763;font-weight:750}
+.p-progress{height:6px;background:#dfe5dd;margin:10px 0;border-radius:5px;overflow:hidden}
+.p-progress div{height:100%;background:#117763}
+.p-time,.p-note{font-size:18px;color:#677972;line-height:1.5;margin:10px 0}
+.p-scenes{grid-template-columns:repeat(2,minmax(0,1fr))}
+.p-scenes.stage-single{grid-template-columns:1fr}
+.p-scenes .stage-card{height:470px}
+.p-scenes .stage-card-title{font-size:28px}.p-scenes .stage-name{overflow-wrap:anywhere}
+.p-scenes .stage-config{font-size:20px}.p-scenes .stage-status{font-size:20px}.p-scenes .stage-stat small{font-size:22px}.p-scenes .stage-stat strong{font-size:38px}
+.p-live-clock{font-size:26px;margin-top:16px;font-weight:700}
+.p-scope{font-size:26px;font-weight:750;color:#117763;margin:0 0 16px}
+.p-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.p-result{background:white;border:2px solid #dfe5dd;border-radius:20px;padding:22px 26px}
+.p-result h3{font-size:28px;margin:0 0 16px}.p-result small{display:block;color:#677972;font-size:20px}
+.p-primary strong{display:block;font-size:48px;color:#117763;font-variant-numeric:tabular-nums;line-height:1.3}
+.p-secondary{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}.p-secondary strong{font-size:24px;font-variant-numeric:tabular-nums}
+.p-delta{font-size:28px;font-weight:750;margin:20px 0 8px;overflow-wrap:anywhere}
+body.vertical-layout .presentation-preview{width:540px;max-width:100%}
+body.vertical-layout .presentation-stage{position:absolute;left:0;top:0;width:1080px;height:1920px;min-height:0;padding:72px 144px 190px 60px;transform-origin:top left;overflow:hidden;font-size:36px;line-height:1.3}
+body.vertical-layout .p-brand{font-size:46px;height:50px}body.vertical-layout .p-brand span{font-size:28px}
+body.vertical-layout .p-source{font-size:30px;line-height:40px;margin:18px 0 14px}
+body.vertical-layout .p-question{font-size:60px;height:150px;min-height:0;line-height:1.25}
+body.vertical-layout .p-conditions{font-size:32px;line-height:42px;height:84px;margin:10px 0 20px}
+body.vertical-layout .p-body{height:1060px;min-height:0}
+body.vertical-layout .p-info{height:1060px;min-height:0;padding:54px 40px;border-radius:24px;border-width:5px}
+body.vertical-layout .p-kicker{font-size:32px;margin-bottom:48px}
+body.vertical-layout .p-info h3{font-size:54px;margin-bottom:44px;line-height:1.35}
+body.vertical-layout .p-line{font-size:42px;line-height:1.5;margin:30px 0}
+body.vertical-layout .p-tool-name{font-size:44px;margin-top:42px;line-height:1.4}
+body.vertical-layout .p-tool-row .p-tool-name{font-size:38px;margin:24px 0 8px}
+body.vertical-layout .p-tool-row .p-line{font-size:36px;margin:8px 0}
+body.vertical-layout .p-footer{position:absolute;top:1544px;left:60px;right:144px;margin:0}
+body.vertical-layout .p-caption{font-size:36px;margin-bottom:16px;line-height:46px}
+body.vertical-layout .p-track{font-size:30px;gap:12px;line-height:40px}
+body.vertical-layout .p-track span{padding:6px 0;border-width:4px}
+body.vertical-layout .p-time{font-size:28px;margin:10px 0;line-height:36px}
+body.vertical-layout .p-progress{height:8px;margin:8px 0}
+body.vertical-layout .p-scenes{grid-template-columns:1fr;gap:18px}
+body.vertical-layout .p-scenes .stage-card{height:485px}
+body.vertical-layout .p-scenes .stage-card-title{font-size:42px}body.vertical-layout .p-scenes .stage-config{font-size:30px}body.vertical-layout .p-scenes .stage-status{font-size:28px}
+body.vertical-layout .p-scenes .stage-stats{height:80px}body.vertical-layout .p-scenes .stage-stat small{font-size:32px}body.vertical-layout .p-scenes .stage-stat strong{font-size:56px}
+body.vertical-layout .p-scenes.stage-single .stage-card{height:986px}
+body.vertical-layout .p-live-clock{font-size:38px;line-height:50px;margin-top:12px}
+body.vertical-layout .p-scope{font-size:42px;line-height:54px;margin:0 0 18px}
+body.vertical-layout .p-results{grid-template-columns:1fr;gap:18px}
+body.vertical-layout .p-result{padding:22px 32px;border-radius:24px}
+body.vertical-layout .p-result h3{font-size:38px;line-height:50px;margin-bottom:8px}
+body.vertical-layout .p-result small{font-size:32px;line-height:44px}
+body.vertical-layout .p-primary strong{font-size:76px;line-height:100px;letter-spacing:-1px}
+body.vertical-layout .p-secondary{margin-top:8px;line-height:44px}body.vertical-layout .p-secondary strong{font-size:36px}
+body.vertical-layout .p-delta{font-size:40px;line-height:54px;margin:18px 0 8px}
+body.vertical-layout .p-note{font-size:30px;line-height:42px;margin:8px 0}
+@media(max-width:620px){body.presentation-mode nav{height:auto;min-height:72px;flex-wrap:wrap;gap:10px;padding:12px 0}body.presentation-mode .nav-actions{gap:6px}body.presentation-mode .brand span{display:none}body.vertical-layout .presentation-preview{width:100%}.presentation-stage{padding:24px 16px}.p-brand{font-size:24px}.p-brand span{font-size:14px}.p-question{font-size:28px}.p-scenes,.p-results{grid-template-columns:1fr}.p-info{padding:24px 18px}.p-track{font-size:14px}}

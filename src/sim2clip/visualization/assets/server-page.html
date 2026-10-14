@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sim2Clip · 服务器请求分流实验</title><style>/*__STYLE__*/</style></head><body><main>
+<nav><a class="brand" href="#">Sim2Clip<span>实验，让答案看得见。</span></a><div class="nav-actions"><label class="file-button">加载服务器 JSON<input id="load-file" type="file" accept=".json,application/json"></label><button id="download">下载数据 ↗</button></div></nav>
+<header><div><p class="eyebrow">SERVER LOAD BALANCING / ANALYSIS MODE</p><h1 id="headline">同一批请求。不同分流，怎样改变队列？</h1><p id="goal" class="intro">每台服务器独立 FIFO、一个处理槽。追踪路由决策与真实请求生命周期。</p></div><aside class="evidence"><span class="green-dot"></span>事件回放 · 真实 SimPy 计算<small id="provenance"></small></aside></header>
+<div id="error" role="alert" hidden></div>
+<div class="layout-tools"><label>画面布局 <select id="layout"><option value="desktop">桌面分析</option><option value="vertical">9:16 竖屏舞台</option></select></label><span>舞台外控制 · 画面按手机比例预览</span></div>
+<section class="controls" aria-label="回放控制"><div class="control-top"><div class="clock"><small>共享模拟时钟 / 秒</small><strong id="clock">0.000</strong></div><div class="selectors"><label>Seed <select id="seed"></select></label><label id="candidate-label">对比组 <select id="candidate"></select></label></div><div class="playback"><button id="restart" aria-label="从头回放">↺</button><button id="play" class="primary">播放实验 ▶</button><label>速度 <select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="8">8×</option></select></label></div></div><input id="scrubber" type="range" min="0" max="1000" value="0" step="1" aria-label="模拟时间进度"><div class="scale"><span>0 秒 · 模型时钟起点</span><span id="end-time"></span></div></section>
+<section id="panels" class="panels" aria-label="同步服务器实验"></section>
+<div class="legend"><span><i class="waiting"></i>等待请求</span><span><i class="serving"></i>处理中</span><span><i class="completed"></i>完成计数</span><span>每个编号实体代表 1 个真实请求；+N 表示未绘制的真实等待请求。</span></div>
+<p class="model-note">网络路径为示意，分流与传输在模型中零耗时。移动时的颜色和计数表示当前真实状态，不表示网络传输耗时。计算结果来自 SimPy 模型，不代表真实网络拓扑或生产性能。请求完成时立即计入完成区域。</p>
+<section class="server-summary"><p class="eyebrow">PAIRED SEEDS / DESCRIPTIVE SUMMARY</p><h2>当前 Seed 看过程，配对 Seed 看结果。</h2><p id="summary-note"></p><div id="summary-table"></div><p id="axis-note"></p></section>
+<section class="timeline-section"><div class="section-heading"><h2>Agent 执行时间线</h2><span class="tag">Planner → MCP → Validation → Report</span></div><p class="muted">Checkpoint 节点完成时间独立于模拟时钟；未提供记录时不补造规划过程。</p><ol id="timeline"></ol></section>
+<details class="report"><summary>查看实验报告</summary><pre id="report"></pre></details><footer><strong>Sim2Clip</strong><span>有限请求 · 固定速率 · 独立 FIFO · 无网络延迟、故障、重试或扩缩容</span></footer>
+</main><script type="application/json" id="experiment-data">__PAYLOAD__</script><script>/*__SCRIPT__*/</script></body></html>
